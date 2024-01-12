@@ -4,9 +4,9 @@ import {demo, fromjson, News, newsList} from './data_structure'
 import assets from './images';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { fetchNews } from './news/fetchnews';
+// import { fetchNews } from './news/fetchnews';
 
-import newsjson from './news/news.json';
+// import newsjson from './news/news.json';
 
 export default function Content(){
     const [listofnews, setList] = useState([]);
@@ -16,11 +16,35 @@ export default function Content(){
     useEffect(
         ()=>{
             var list:any = [];
-            for(var i=0;i<newsjson.length;i++){
-                list.push(<NewsComponent key={i} news={fromjson(newsjson[i])} id={i+1}/>);
-            }
-            setList(list);
-            setIsLoading(false);
+
+            fetch('http://localhost:5000/getnews').then((val)=>{
+                val.json().then((json)=>{
+                    // console.log(json);
+                    const articles = json['articles'];
+                    for(var i=0;i<articles.length;i++){
+                        // console.log(i);
+                        
+                        list.push(<NewsComponent key={i} news={fromjson(articles[i])} id={i+1}/>);
+                    }
+                    // console.log(list);
+                    
+                    setList(list);
+                    setIsLoading(false);
+                })
+                
+            }).catch((err)=>{
+                console.log(err);
+                
+            })
+
+            // for(var i=0;i<newsjson.length;i++){
+            //     list.push(<NewsComponent key={i} news={fromjson(newsjson[i])} id={i+1}/>);
+            // }
+            // setList(list);
+            // setIsLoading(false);
+            
+
+
             // fetchNews().then(
             //     ()=>{
             //         var list: any=[];
@@ -70,12 +94,12 @@ export default function Content(){
 
 
 function NewsComponent(props:any){
-    const [isSaved,setSaved] = useState(false);
+    // const [isSaved,setSaved] = useState(false);
     
     return (
         <>
-        <div className="flex  justify-between items-center">
-            <div className="w-12 shrink-0 text-center  text-2xl text-gray-700 ">
+        <div className="flex pt-5 pr-5 justify-between items-center">
+            <div className="w-12 shrink-0 text-center self-start text-2xl text-gray-700 ">
                 <p>{props.id}</p>
             </div>
             <div className="w-full text-gray-500">

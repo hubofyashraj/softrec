@@ -1,0 +1,17 @@
+{
+  "name": "addnewsapi",
+  "version": "1.0.0",
+  "description": "api to edit/add news ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "yashraj",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security"
+  }
+}
