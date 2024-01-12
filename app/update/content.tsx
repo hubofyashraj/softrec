@@ -82,7 +82,7 @@ export default function Content(){
             {
             isLoading?
             <div className='h-full w-full flex flex-col justify-center items-center'>
-                <Image alt='spinner' className='animate-spin size-8' width={10} height={10} src={assets.images.spinner.src}/>
+                <Image alt='spinner' className='animate-spin size-8' width={200} height={200} src={assets.images.spinner.src}/>
                 <p  className='text-5xl animate-pulse'>Loading</p>
             </div>: 
             listofnews

@@ -1,4 +1,5 @@
 "use client"
+import Image from 'next/image';
 import assets from '../images';
 import './navbar.css'
 import { useState } from "react"
@@ -26,7 +27,7 @@ export default function Navbar(){
         <div style={{zIndex:1000}} className="  w-full drop-shadow-md">
             <nav className="h-20 flex justify-between md:items-center">
                 <div className='self-center'>
-                    <img className=" h-16 text-gray-600 " alt='softrec logo' 
+                    <Image height={200} width={200} className=" h-16 w-16 text-gray-600 " alt='softrec logo' 
                     src={assets.images.logo.src} />
                 </div>
                 <p className='text-5xl self-center md:justify-end text-gray-600'>SOFTREC</p>

@@ -132,7 +132,7 @@ function AddNewsContent() {
                 <div style={{height: `calc(100vh - 9rem)`}} className=" bg-white bg-opacity-30 rounded-lg mt-2 mb-1 overflow-y-scroll ">
                     {fetched?newsList:
                     <div className='h-full w-full flex flex-col justify-center items-center'>
-                        <Image alt='spinner' className='animate-spin size-8' width={10} height={10} src={assets.images.spinner.src}/>
+                        <Image alt='spinner' className='animate-spin size-8' width={200} height={200} src={assets.images.spinner.src}/>
                         <p  className='text-5xl animate-pulse'>Loading</p>
                     </div>}
                 </div>
