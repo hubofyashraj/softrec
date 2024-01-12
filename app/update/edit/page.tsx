@@ -1,10 +1,10 @@
 "use client"
 import axios from "axios";
-import Navbar from "../navbar";
-import '../scrollbar.css'
+import Navbar from "../../navbar/navbar";
+import '../../scrollbar.css'
 import newsJson from '@/public/news/news.json';
 import { useEffect, useState } from "react";
-import assets from "../images";
+import assets from "../../images";
 import Image from "next/image";
 import { fromjson } from "../data_structure";
 

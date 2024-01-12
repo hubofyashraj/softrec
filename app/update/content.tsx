@@ -1,7 +1,7 @@
 'use client'
-import './scrollbar.css'
+import '../scrollbar.css'
 import {demo, fromjson, News, newsList} from './data_structure'
-import assets from './images';
+import assets from '../images';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 // import { fetchNews } from './news/fetchnews';

@@ -54,8 +54,8 @@ app.post('/delete', (req, res)=>{
         }
         newsJson = JSON.parse(data);
         // console.log(newsJson);
-        console.log(newsJson);
-        console.log(dt);
+        // console.log(newsJson);
+        // console.log(dt);
         if(newsJson[dt.id].title == dt.title) {
             newsJson = [...newsJson.slice(0, dt.id), ...newsJson.slice(dt.id+1)];
         }
