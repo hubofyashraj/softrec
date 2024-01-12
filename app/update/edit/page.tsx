@@ -8,6 +8,7 @@ import assets from "../../images";
 import Image from "next/image";
 import { fromjson } from "../data_structure";
 
+import { fetchapi } from "@/app/api";
 
 export default function AddNews() {
     // console.log(newsJson);
@@ -58,7 +59,7 @@ function AddNewsContent() {
             newsJson.push(news);
             
             axios.post(
-                'http://localhost:5000/addnews',
+                fetchapi+'/addnews',
                 news
             ).then((res)=>{
                 // console.log(res);
@@ -103,7 +104,7 @@ function AddNewsContent() {
 
 
         if(toFetch){
-            fetch('http://localhost:5000/getNews').then((result)=>{
+            fetch(fetchapi+'/getNews').then((result)=>{
                 result.json().then((json)=>{
                     var list:any = [];
                     var articles = json['articles'];
@@ -143,7 +144,7 @@ function AddNewsContent() {
 
 function deleteItem(id: any, title: String, callback:Function) {
     axios.post(
-        'http://localhost:5000/delete',
+        fetchapi+'/delete',
         {
             id: id,
             title: title

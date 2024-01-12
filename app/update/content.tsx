@@ -4,6 +4,7 @@ import {demo, fromjson, News, newsList} from './data_structure'
 import assets from '../images';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { fetchapi } from '../api';
 // import { fetchNews } from './news/fetchnews';
 
 // import newsjson from './news/news.json';
@@ -17,7 +18,7 @@ export default function Content(){
         ()=>{
             var list:any = [];
 
-            fetch('http://localhost:5000/getnews').then((val)=>{
+            fetch(fetchapi+'/getnews').then((val)=>{
                 val.json().then((json)=>{
                     // console.log(json);
                     const articles = json['articles'];
